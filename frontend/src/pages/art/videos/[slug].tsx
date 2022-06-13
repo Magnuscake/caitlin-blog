@@ -71,7 +71,7 @@ const Video = ({ video }: IVideoProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const videosRes = await fetchAPI("/art-videos", { fields: ["slug"] });
+  const videosRes = await fetchAPI("/videos", { fields: ["slug"] });
   return {
     paths: videosRes.data.map((video: Video) => ({
       params: {
@@ -83,7 +83,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const videoRes = await fetchAPI("/art-videos", {
+  const videoRes = await fetchAPI("/videos", {
     filters: {
       slug: params?.slug,
     },

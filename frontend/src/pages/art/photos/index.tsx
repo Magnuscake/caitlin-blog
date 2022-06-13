@@ -37,7 +37,7 @@ const Photos: NextPage<IPhotoProps> = ({ photos }) => {
 };
 
 export async function getStaticProps() {
-  const photosRes = await fetchAPI("/art-photos", { populate: "*" });
+  const photosRes = await fetchAPI("/photos", { populate: "*" });
 
   return {
     props: {

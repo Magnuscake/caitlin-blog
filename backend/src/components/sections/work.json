@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sections_works",
+  "info": {
+    "displayName": "Work",
+    "icon": "hand-holding-heart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "details": {
+      "type": "richtext"
+    },
+    "title": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    }
+  }
+}

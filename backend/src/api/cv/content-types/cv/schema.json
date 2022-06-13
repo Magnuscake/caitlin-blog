@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "cvs",
+  "info": {
+    "singularName": "cv",
+    "pluralName": "cvs",
+    "displayName": "CV",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "work": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.work"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "education": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.work"
+    },
+    "achievements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.work"
+    }
+  }
+}

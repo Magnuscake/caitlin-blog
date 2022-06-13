@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.1.9",
+    "@strapi/plugin-users-permissions": "4.1.9",
+    "@strapi/strapi": "4.1.9",
+    "better-sqlite3": "7.4.6",
+    "lodash.set": "^4.3.2",
+    "mime-types": "^2.1.27",
+    "node-fetch": "^3.2.3",
+    "pg": "^8.7.3"
+  },
+  "name": "backend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Caitlin Kozman",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "gcp-build": "strapi build",
+    "strapi": "strapi",
+    "t4s": "t4s"
+  },
+  "devDependencies": {
+    "types-4-strapi": "^1.0.7"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "69203737-a94c-4bfc-acfa-cffa34df2eb8"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

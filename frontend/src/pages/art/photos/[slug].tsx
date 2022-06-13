@@ -96,7 +96,7 @@ const Photo = ({ photo }: IPhotoProps) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const photoRes = await fetchAPI("/art-photos", { fields: ["slug"] });
+  const photoRes = await fetchAPI("/photos", { fields: ["slug"] });
   return {
     paths: photoRes.data.map((photo: Photo) => ({
       params: {
@@ -108,7 +108,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const photoRes = await fetchAPI("/art-photos", {
+  const photoRes = await fetchAPI("/photos", {
     filters: {
       slug: params?.slug,
     },
