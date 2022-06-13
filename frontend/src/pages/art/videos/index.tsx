@@ -17,7 +17,8 @@ const Videos: NextPage<IVideoProps> = ({ videos }) => {
       <Title order={2} mb={40}>
         le monde est ma toile
       </Title>
-      {!videos ? (
+      <Text>Nothing to see here at the moment</Text>
+      {/*!videos || videos === [] || !videos.length ? (
         <Text>Nothing to see here at the moment</Text>
       ) : (
         <SimpleGrid
@@ -31,19 +32,19 @@ const Videos: NextPage<IVideoProps> = ({ videos }) => {
             <VideoCard key={video.id} video={video} />
           ))}
         </SimpleGrid>
-      )}
+      )*/}
     </Container>
   );
 };
 
-export async function getStaticProps() {
-  const videosRes = await fetchAPI("/art-videos", { populate: "*" });
-
-  return {
-    props: {
-      videos: videosRes.data,
-    },
-    revalidate: 1,
-  };
-}
+// export async function getStaticProps() {
+//   const videosRes = await fetchAPI("/art-videos", { populate: "*" });
+//
+//   return {
+//     props: {
+//       videos: videosRes.data,
+//     },
+//     revalidate: 1,
+//   };
+// }
 export default Videos;

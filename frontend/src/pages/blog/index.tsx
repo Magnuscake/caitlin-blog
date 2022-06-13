@@ -15,7 +15,7 @@ const Blog: NextPage<IBlogProps> = ({ posts }) => {
       <Title order={2} mb={60}>
         My Musings
       </Title>
-      {!posts ? (
+      {!posts || posts === [] || !posts.length ? (
         <Text>Nothing to see here at the moment</Text>
       ) : (
         <SimpleGrid
@@ -79,7 +79,7 @@ export async function getStaticProps() {
       // posts: postsRes.data,
       posts: postRes.data,
     },
-    revalidate: 1,
+    revalidate: 10,
   };
 }
 

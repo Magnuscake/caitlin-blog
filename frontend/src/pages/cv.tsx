@@ -17,50 +17,50 @@ const CV: NextPage<ICVProps> = ({ cv }) => {
       <section style={{ margin: "19px 0" }}>
         <Title order={2}>Education</Title>
         <Divider my={9} />
-        {education
-          ? education
-              .sort((a, b) => b.year - a.year)
-              .map((item: WorkComponent) => (
-                <Box key={item.id}>
-                  <Text size="xl" weight={700}>
-                    {item.year}
-                  </Text>
-                  <Text>{item.details}</Text>
-                </Box>
-              ))
-          : ""}
+        {!education || education === [] || !education.length ? (
+          <Text>This remains empty </Text>
+        ) : (
+          education
+            .sort((a, b) => b.year - a.year)
+            .map((item: WorkComponent) => (
+              <Box key={item.id}>
+                <Text size="xl" weight={700}>
+                  {item.year}
+                </Text>
+                <Text>{item.details}</Text>
+              </Box>
+            ))
+        )}
       </section>
 
       <section style={{ margin: "19px 0" }}>
         <Title order={2}>Work</Title>
         <Divider my={9} />
-        {work
-          ? work
-              .sort((a, b) => b.year - a.year)
-              .map((item: WorkComponent) => (
-                <Box key={item.id}>
-                  <div
-                    style={{
-                      display: "flex",
-                    }}
-                  >
-                    <Text
-                      size="xl"
-                      weight={700}
-                      style={{ marginRight: "30px" }}
-                    >
-                      {item.year}
+        {!work || work === [] || !work.length ? (
+          <Text>This remains empty </Text>
+        ) : (
+          work
+            .sort((a, b) => b.year - a.year)
+            .map((item: WorkComponent) => (
+              <Box key={item.id}>
+                <div
+                  style={{
+                    display: "flex",
+                  }}
+                >
+                  <Text size="xl" weight={700} style={{ marginRight: "30px" }}>
+                    {item.year}
+                  </Text>
+                  {item.title && (
+                    <Text size="xl" weight={700}>
+                      {item.title}
                     </Text>
-                    {item.title && (
-                      <Text size="xl" weight={700}>
-                        {item.title}
-                      </Text>
-                    )}
-                  </div>
-                  {item.details && <ReactMarkdown children={item.details} />}
-                </Box>
-              ))
-          : ""}
+                  )}
+                </div>
+                {item.details && <ReactMarkdown children={item.details} />}
+              </Box>
+            ))
+        )}
       </section>
     </Container>
   );

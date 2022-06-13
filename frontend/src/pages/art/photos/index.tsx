@@ -17,7 +17,7 @@ const Photos: NextPage<IPhotoProps> = ({ photos }) => {
       <Title order={2} mb={40}>
         le monde est ma toile
       </Title>
-      {!photos ? (
+      {!photos || photos === [] || !photos.length ? (
         <Text>Nothing to see here at the moment</Text>
       ) : (
         <SimpleGrid
